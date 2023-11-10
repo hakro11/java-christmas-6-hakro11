@@ -5,12 +5,12 @@
       2. [ ] weekday : 디저트 메뉴를 메뉴 1개당 2,023원 할인
       3. [ ] weekend : 메인 메뉴를 메뉴 1개당 2,023원 할인
       4. [ ] special : 이벤트 달력에 별이 있으면 총 주문 금액에서 1,000원 할인
-   2. BonusEvent : 할인 전 총주문 금액이 12만 원 이상일 때, 샴페인 1개 증정
+      5. [ ] BonusEvent : 할인 전 총주문 금액이 12만 원 이상일 때, 샴페인 1개 증정
    3. Menu
-      1. [ ] 애피타이저 : 양송이수프(6,000), 타파스(5,000), 시저샐러드(8,000)
-      2. [ ] 메인 : 티본스테이크(55,000), 바비큐립(54,000), 해산물파스타(35,000), 크리스마스파스타(25,000)
-      3. [ ] 디저트 : 초코케이크(15,000), 아이스크림(5,000)
-      4. [ ] 음료 : 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
+      1. [ ] appetizer : 양송이수프(6,000), 타파스(5,000), 시저샐러드(8,000)
+      2. [ ] mainDish : 티본스테이크(55,000), 바비큐립(54,000), 해산물파스타(35,000), 크리스마스파스타(25,000)
+      3. [ ] dessert : 초코케이크(15,000), 아이스크림(5,000)
+      4. [ ] drink : 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
    4. Badge : 총혜택 금액에 따라 다른 이벤트 배지를 부여
       1. [ ] star : 5,000 원 이상
       2. [ ] tree : 10,000 원 이상
@@ -19,19 +19,18 @@
 
 2. View
    1. InputView
-      1. [ ] welcomeMessage
-      2. [ ] bookingDay
+      1. [ ] bookingDay : 식당 예상 방문 날짜 입력받기
+      2. [ ] bookingMenu : 주문할 메뉴와 개수 입력받기
    2. OutputView
-      1. [ ] showCanGetBenefits
-      2. [ ] bookingMenu
-      3. [ ] showEvent
-      4. [ ] orderMenu
-      5. [ ] totalPriceBeforeDiscount
-      6. [ ] giftmenu
-      7. [ ] showAllDiscount
-      8. [ ] totalDiscountPrice
-      9. [ ] expectedPrice
-      10. [ ] showBadge
+      1. [ ] welcomeMessage : 웰컴메세지 출력 
+      2. [ ] showCanGetBenefits : 혜택 알림 출력
+      4. [ ] orderMenu : 주문 메뉴 출력
+      5. [ ] totalPriceBeforeDiscount : 할인 전 총주문 금액 출력
+      6. [ ] giftmenu : 증정 메뉴 출력(샴페인)
+      7. [ ] showAllDiscount : 받은 총혜택 내역 출력
+      8. [ ] totalDiscountPrice : 총혜택 금액 출력
+      9. [ ] expectedPrice : 할인 후 예상 결제 금액 출력
+      10. [ ] showBadge : 이벤트 배지 출력
 
 
 ### 이벤트 목표
