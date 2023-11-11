@@ -12,14 +12,14 @@
       3. [ ] dessert : 초코케이크(15,000), 아이스크림(5,000)
       4. [ ] drink : 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
    3. Badge : 총혜택 금액에 따라 다른 이벤트 배지를 부여
-      1. [ ] star : 5,000 원 이상
-      2. [ ] tree : 10,000 원 이상
-      3. [ ] santa : 20,000 원 이상
-      4. [ ] none : "없음"
+      1. [x] star : 5,000 원 이상
+      2. [x] tree : 10,000 원 이상
+      3. [x] santa : 20,000 원 이상
+      4. [x] none : "없음"
    4. Calender
-      1. [ ] Weekend : 매주 금요일, 토요일 주말 설정
-      2. [ ] Speical : 매주 일요일과 크리스마스(25일) Special Day 설정
-      3. [ ] Weekday : Weekend, Special 제외한 날은 Weekday로 설정
+      1. [x] Weekend : 매주 금요일, 토요일 주말 설정
+      2. [x] Speical : 매주 일요일과 크리스마스(25일) Special Day 설정
+      3. [x] Weekday : Weekend, Special 제외한 날은 Weekday로 설정
 
 2. View
    1. InputView
