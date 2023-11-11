@@ -2,9 +2,7 @@ package christmas.domain;
 
 import static org.assertj.core.api.Assertions.*;
 
-import christmas.constants.Const;
 import java.util.Map;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
