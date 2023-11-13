@@ -35,6 +35,13 @@ public class Bill {
         }
     }
 
+    public boolean contains(String input) {
+        if (allMenu.contains(input)) {
+            return true;
+        }
+
+        return false;
+    }
     public void calcPrice() {
         totalPrice += appetizer.calcTotalPrice();
         totalPrice += dessert.calcTotalPrice();
