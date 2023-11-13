@@ -29,7 +29,7 @@ public class InputView {
         return bookingDay();
     }
 
-    private int convertStrToInt(String input) {
+    public int convertStrToInt(String input) {
         int convert;
         try {
             convert = Integer.parseInt(input);
@@ -39,7 +39,7 @@ public class InputView {
         }
     }
 
-    private boolean checkRange(int day) {
+    public boolean checkRange(int day) {
         if (day >= DAY_START && day <= DAY_LAST) {
             return true;
         }
@@ -70,26 +70,45 @@ public class InputView {
         }
     }
 
-    private void separate(List<String> inputSplit) {
+    public void separate(List<String> inputSplit) {
         for (int i = 0; i < inputSplit.size(); i++) {
-            validate(inputSplit.get(i), i);
+            validate(inputSplit.get(i).trim(), i);
         }
     }
 
     private void validate(String input, int index) {
+        int totalAmount = 0;
         if (index % 2 == 0) {
-            String inputTrim = input.trim();
-            validateContainMenu(inputTrim);
-            inputMenu.add(inputTrim);
+            addMenu(input);
             return;
         }
 
         if (index % 2 == 1) {
-            inputAmountMenu.add(validateNumber(input));
+            addAmount(input);
+            totalAmount = inputAmountMenu.stream().mapToInt(Integer::intValue).sum();
+            if (totalAmount > 20) {
+                throw new IllegalArgumentException(makeErrorMessageNotAvailableOrder());
+            }
+
             return;
         }
 
         throw new IllegalArgumentException(makeErrorMessageNotAvailableOrder());
+    }
+
+    private void addMenu(String input) {
+        validateContainMenu(input);
+        if (inputMenu.contains(input)) {
+            throw new IllegalArgumentException(makeErrorMessageNotAvailableOrder());
+        }
+        inputMenu.add(input);
+    }
+
+    private int addAmount(String input) {
+        int amount = validateNumber(input);
+        inputAmountMenu.add(amount);
+
+        return amount;
     }
 
     private void validateContainMenu(String input) {
