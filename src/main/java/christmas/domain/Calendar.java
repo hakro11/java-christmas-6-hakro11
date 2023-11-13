@@ -34,16 +34,23 @@ public class Calendar {
 
     private void makeEvent(int day, Map<Integer, String> calendar) {
         int selectDay = day % DAY_OF_WEEK;
+        if (day == CHRISTMAS) {
+            calendar.put(day, Const.WEEKDAY + ", " + Const.SPECIAL);
+            return;
+        }
+
         if (selectDay == FRIDAY || selectDay == SATURDAY) {
             calendar.put(day, String.valueOf(Const.WEEKEND));
             return;
         }
 
-        if (selectDay == SPECIALDAY || day == CHRISTMAS) {
+        if (selectDay == SPECIALDAY) {
             calendar.put(day, String.valueOf(Const.SPECIAL));
             return;
         }
 
-        calendar.put(day, String.valueOf(Const.WEEKDAY));
+        if (day != CHRISTMAS) {
+            calendar.put(day, String.valueOf(Const.WEEKDAY));
+        }
     }
 }
