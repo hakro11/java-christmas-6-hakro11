@@ -11,6 +11,7 @@ public class MainDish {
     private Map<String, Integer> bill;
     private Map<String, Integer> howManyOrder;
     private int totalPrice = 0;
+
     public MainDish() {
         MAINDISH_NAME = List.of(
                 AllMenu.MAIN_DISH_BBQ_RIBS.getMenuName(),
@@ -39,6 +40,7 @@ public class MainDish {
 
         return result;
     }
+
     private Map<String, Integer> setHowManyOrder() {
         Map<String, Integer> result = new HashMap<>();
 
@@ -51,6 +53,14 @@ public class MainDish {
 
     public List<String> getMainDish() {
         return MAINDISH_NAME;
+    }
+
+    public Map<String, Integer> getBill() {
+        return bill;
+    }
+
+    public Map<String, Integer> getHowManyOrder() {
+        return howManyOrder;
     }
 
     public int calcTotalPrice() {

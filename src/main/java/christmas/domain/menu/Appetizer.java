@@ -53,6 +53,14 @@ public class Appetizer {
         return APPETIZERS_NAME;
     }
 
+    public Map<String, Integer> getBill() {
+        return bill;
+    }
+
+    public Map<String, Integer> getHowManyOrder() {
+        return howManyOrder;
+    }
+
     public int calcTotalPrice() {
         int result = 0;
 

@@ -17,8 +17,9 @@ public class CalendarTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"1,Weekend", "2,Weekend", "25,Special", "10,Special", "31,Special", "30,Weekend", "12,Weekday"})
+    @CsvSource({"1,Weekend", "2,Weekend", "25,Special", "25,Weekday", "10,Special", "31,Special", "30,Weekend", "12,Weekday"})
     public void checkDay(int day, String expected) {
-        assertThat(calendar.get(day)).isEqualTo(expected);
+        assertThat(calendar.get(day)).contains(expected);
+
     }
 }

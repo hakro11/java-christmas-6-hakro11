@@ -52,6 +52,14 @@ public class Drink {
         return DRINK_NAME;
     }
 
+    public Map<String, Integer> getBill() {
+        return bill;
+    }
+
+    public Map<String, Integer> getHowManyOrder() {
+        return howManyOrder;
+    }
+
     public int calcTotalPrice() {
         int result = 0;
 

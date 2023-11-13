@@ -5,7 +5,9 @@ import christmas.domain.menu.Dessert;
 import christmas.domain.menu.Drink;
 import christmas.domain.menu.MainDish;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Bill {
     private Appetizer appetizer = new Appetizer();
@@ -13,6 +15,7 @@ public class Bill {
     private Drink drink = new Drink();
     private MainDish mainDish = new MainDish();
     private List<String> allMenu = setAllMenu();
+    private Map<String, Integer> menuMap = new HashMap<>();
     private int totalPrice = 0;
 
     private List<String> setAllMenu () {

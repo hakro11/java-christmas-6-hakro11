@@ -50,6 +50,14 @@ public class Dessert {
         return DESSERTS_NAME;
     }
 
+    public Map<String, Integer> getBill() {
+        return bill;
+    }
+
+    public Map<String, Integer> getHowManyOrder() {
+        return howManyOrder;
+    }
+
     public int calcTotalPrice() {
         int result = 0;
 
