@@ -6,20 +6,20 @@ import java.util.List;
 import java.util.Map;
 
 public class Appetizer {
-    private final List<String> appetizersName;
-    private final List<Integer> appetizersPrice;
+    private final List<String> APPETIZERS_NAME;
+    private final List<Integer> APPETIZERS_PRICE;
     private Map<String, Integer> bill;
     private Map<String, Integer> howManyOrder;
     private int totalPrice = 0;
 
     public Appetizer() {
-        appetizersName = List.of(
+        APPETIZERS_NAME = List.of(
                 AllMenu.APPETIZER_MUSHROOM_CREAM_SOUP.getMenuName(),
                 AllMenu.APPETIZER_TAPAS.getMenuName(),
                 AllMenu.APPETIZER_CAESAR_SALAD.getMenuName()
         );
 
-        appetizersPrice = List.of(
+        APPETIZERS_PRICE = List.of(
                 AllMenu.APPETIZER_MUSHROOM_CREAM_SOUP.getMenuPrice(),
                 AllMenu.APPETIZER_TAPAS.getMenuPrice(),
                 AllMenu.APPETIZER_CAESAR_SALAD.getMenuPrice()
@@ -33,8 +33,8 @@ public class Appetizer {
     private Map<String, Integer> setBill() {
         Map<String, Integer> result = new HashMap<>();
 
-        for (int i = 0; i < appetizersName.size(); i++) {
-            result.put(appetizersName.get(i), appetizersPrice.get(i));
+        for (int i = 0; i < APPETIZERS_NAME.size(); i++) {
+            result.put(APPETIZERS_NAME.get(i), APPETIZERS_PRICE.get(i));
         }
 
         return result;
@@ -42,7 +42,7 @@ public class Appetizer {
     private Map<String, Integer> setHowManyOrder() {
         Map<String, Integer> result = new HashMap<>();
 
-        for (String menuName : appetizersName) {
+        for (String menuName : APPETIZERS_NAME) {
             result.put(menuName, 0);
         }
 
@@ -50,13 +50,13 @@ public class Appetizer {
     }
 
     public List<String> getAppetizers() {
-        return appetizersName;
+        return APPETIZERS_NAME;
     }
 
     public int calcTotalPrice() {
         int result = 0;
 
-        for (String menuName : appetizersName) {
+        for (String menuName : APPETIZERS_NAME) {
             result += bill.get(menuName) * howManyOrder.get(menuName);
         }
 

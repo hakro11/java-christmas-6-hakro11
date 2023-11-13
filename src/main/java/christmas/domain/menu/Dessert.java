@@ -6,19 +6,19 @@ import java.util.List;
 import java.util.Map;
 
 public class Dessert {
-    private final List<String> dessertsName;
-    private final List<Integer> dessertsPrice;
+    private final List<String> DESSERTS_NAME;
+    private final List<Integer> DESSERTS_PRICE;
     private Map<String, Integer> bill;
     private Map<String, Integer> howManyOrder;
     private int totalPrice = 0;
 
     public Dessert() {
-        dessertsName = List.of(
+        DESSERTS_NAME = List.of(
                 AllMenu.DESSERT_CHOCO_CAKE.getMenuName(),
                 AllMenu.DESSERT_ICE_CREAM.getMenuName()
         );
 
-        dessertsPrice = List.of(
+        DESSERTS_PRICE = List.of(
                 AllMenu.DESSERT_CHOCO_CAKE.getMenuPrice(),
                 AllMenu.DESSERT_ICE_CREAM.getMenuPrice()
         );
@@ -30,8 +30,8 @@ public class Dessert {
     private Map<String, Integer> setBill() {
         Map<String, Integer> result = new HashMap<>();
 
-        for (int i = 0; i < dessertsName.size(); i++) {
-            result.put(dessertsName.get(i), dessertsPrice.get(i));
+        for (int i = 0; i < DESSERTS_NAME.size(); i++) {
+            result.put(DESSERTS_NAME.get(i), DESSERTS_PRICE.get(i));
         }
 
         return result;
@@ -40,20 +40,20 @@ public class Dessert {
     private Map<String, Integer> setHowManyOrder() {
         Map<String, Integer> result = new HashMap<>();
 
-        for (String menuName : dessertsName) {
+        for (String menuName : DESSERTS_NAME) {
             result.put(menuName, 0);
         }
 
         return result;
     }
     public List<String> getDesserts() {
-        return dessertsName;
+        return DESSERTS_NAME;
     }
 
     public int calcTotalPrice() {
         int result = 0;
 
-        for (String menuName : dessertsName) {
+        for (String menuName : DESSERTS_NAME) {
             result += bill.get(menuName) * howManyOrder.get(menuName);
         }
 

@@ -13,7 +13,7 @@ public class Bill {
     private Drink drink = new Drink();
     private MainDish mainDish = new MainDish();
     private List<String> allMenu = setAllMenu();
-    private int totalPrice;
+    private int totalPrice = 0;
 
     private List<String> setAllMenu () {
         List<String> result = new ArrayList<>();
@@ -30,5 +30,12 @@ public class Bill {
         for (String menuName : menu) {
             result.add(menuName);
         }
+    }
+
+    public void calcPrice() {
+        totalPrice += appetizer.calcTotalPrice();
+        totalPrice += dessert.calcTotalPrice();
+        totalPrice += mainDish.calcTotalPrice();
+        totalPrice += drink.calcTotalPrice();
     }
 }
