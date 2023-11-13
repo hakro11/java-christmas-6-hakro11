@@ -23,12 +23,12 @@
 
 2. View
    1. InputView
-      1. [ ] bookingDay : 식당 예상 방문 날짜 입력받기
-      2. [ ] bookingMenu : 주문할 메뉴와 개수 입력받기
+      1. [x] bookingDay : 식당 예상 방문 날짜 입력받기
+      2. [x] bookingMenu : 주문할 메뉴와 개수 입력받기
    2. OutputView
-      1. [ ] welcomeMessage : 웰컴메세지 출력 
-      2. [ ] showCanGetBenefits : 혜택 알림 출력
-      4. [ ] orderMenu : 주문 메뉴 출력
+      1. [x] welcomeMessage : 웰컴메세지 출력 
+      2. [x] showCanGetBenefits : 혜택 알림 출력
+      4. [x] outputOrder : 주문 메뉴 출력
       5. [ ] totalPriceBeforeDiscount : 할인 전 총주문 금액 출력
       6. [ ] giftmenu : 증정 메뉴 출력(샴페인)
       7. [ ] showAllDiscount : 받은 총혜택 내역 출력

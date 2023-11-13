@@ -19,6 +19,7 @@ public class ChristmasController {
 
     public void order() {
         inputView.bookingMenu();
-        outputView.outputOrder(inputView.getInputMenu(), inputView.getInputAmountMenu(), WISH_DAY);
+        outputView.showCanGetBenefits(WISH_DAY);
+        outputView.outputOrder(inputView.getInputMenu(), inputView.getInputAmountMenu());
     }
 }
