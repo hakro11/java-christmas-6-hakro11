@@ -6,9 +6,7 @@ import christmas.domain.menu.Drink;
 import christmas.domain.menu.MainDish;
 import christmas.view.InputView;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Bill {
     private Appetizer appetizer = new Appetizer();
@@ -18,7 +16,6 @@ public class Bill {
     private MainDish mainDish = new MainDish();
     private List<String> allMenu = setAllMenu();
     private int totalPriceBeforeDiscount = 0;
-    private int totalPriceAfterDiscount = 0;
 
     private List<String> setAllMenu() {
         List<String> result = new ArrayList<>();
@@ -104,10 +101,6 @@ public class Bill {
         totalPriceBeforeDiscount += dessert.getTotalPrice();
         totalPriceBeforeDiscount += mainDish.getTotalPrice();
         totalPriceBeforeDiscount += drink.getTotalPrice();
-    }
-
-    public void applyDiscount() {
-
     }
 
     public int getTotalPriceBeforeDiscount() {

@@ -10,7 +10,6 @@ import christmas.view.OutputView;
 
 public class ChristmasController {
     private final int WISH_DAY;
-    private final int MIN_PRICE = 10_000;
     private final int CAN_GET_SPECIAL = 120_000;
     private int totalDiscount = 0;
     private final Calendar EVENT_CALENDAR = new Calendar();
