@@ -3,7 +3,8 @@ package christmas.constants;
 public enum Const {
     WEEKEND("Weekend"),
     WEEKDAY("Weekday"),
-    SPECIAL("Special");
+    SPECIAL("Special"),
+    NONE("없음");
 
     final String str;
 

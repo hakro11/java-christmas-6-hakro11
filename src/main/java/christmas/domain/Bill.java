@@ -113,8 +113,4 @@ public class Bill {
     public int getTotalPriceBeforeDiscount() {
         return totalPriceBeforeDiscount;
     }
-
-    public int getTotalPriceAfterDiscount() {
-        return totalPriceAfterDiscount;
-    }
 }

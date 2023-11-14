@@ -35,22 +35,22 @@ public class Calendar {
     private void makeEvent(int day, Map<Integer, String> calendar) {
         int selectDay = day % DAY_OF_WEEK;
         if (day == CHRISTMAS) {
-            calendar.put(day, Const.WEEKDAY + ", " + Const.SPECIAL);
+            calendar.put(day, Const.WEEKDAY.getStr() + ", " + Const.SPECIAL.getStr());
             return;
         }
 
         if (selectDay == FRIDAY || selectDay == SATURDAY) {
-            calendar.put(day, String.valueOf(Const.WEEKEND));
+            calendar.put(day, Const.WEEKEND.getStr());
             return;
         }
 
         if (selectDay == SPECIALDAY) {
-            calendar.put(day, String.valueOf(Const.SPECIAL));
+            calendar.put(day, Const.SPECIAL.getStr() + ", " + Const.WEEKDAY.getStr());
             return;
         }
 
         if (day != CHRISTMAS) {
-            calendar.put(day, String.valueOf(Const.WEEKDAY));
+            calendar.put(day, Const.WEEKDAY.getStr());
         }
     }
 

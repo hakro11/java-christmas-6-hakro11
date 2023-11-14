@@ -8,5 +8,8 @@ public class Application {
         ChristmasController christmasController = new ChristmasController();
         christmasController.order();
         christmasController.applyDiscount();
+        christmasController.event();
+        christmasController.benefitPrice();
+        christmasController.eventBadge();
     }
 }

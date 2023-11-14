@@ -1,6 +1,7 @@
 package christmas.controller;
 
 import christmas.constants.Const;
+import christmas.domain.Badge;
 import christmas.domain.Bill;
 import christmas.domain.Calendar;
 import christmas.domain.Discount;
@@ -19,6 +20,7 @@ public class ChristmasController {
     private Discount discount = new Discount();
 
     public ChristmasController() {
+        outputView.welcomeMessage();
         this.WISH_DAY = inputView.bookingDay();
     }
 
@@ -32,6 +34,24 @@ public class ChristmasController {
 
     public void event() {
         outputView.outputGiftEvent(bill.getTotalPriceBeforeDiscount());
+        outputView.outputBenefitMessage();
+        if (totalDiscount == 0) {
+            System.out.println(Const.NONE.getStr());
+            System.out.println("");
+            return;
+        }
+        outputView.getAllBenefits(discount);
+    }
+
+    public void benefitPrice() {
+        outputView.outputTotalDiscountPrice(totalDiscount);
+        outputView.expectedPrice(bill.getTotalPriceBeforeDiscount(), totalDiscount);
+    }
+
+    public void eventBadge() {
+        Badge badge = new Badge(totalDiscount);
+        String badgeName = badge.getBADGE();
+        outputView.outputBadge(badgeName);
     }
 
     public void applyDiscount() {
@@ -64,8 +84,10 @@ public class ChristmasController {
             return;
         }
 
-        amount = bill.getDessert().howManyOrder();
-        discount.weekdayDiscount(amount);
-        totalDiscount += discount.getWeekday();
+        if (event.contains(Const.WEEKDAY.getStr())) {
+            amount = bill.getDessert().howManyOrder();
+            discount.weekdayDiscount(amount);
+            totalDiscount += discount.getWeekday();
+        }
     }
 }
