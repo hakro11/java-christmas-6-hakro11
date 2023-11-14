@@ -13,8 +13,7 @@ public class ChristmasController {
     public static final Calendar EVENT_CALENDAR = new Calendar();
 
     public ChristmasController() {
-        int input = inputView.bookingDay();
-        this.WISH_DAY = input;
+        this.WISH_DAY = inputView.bookingDay();
     }
 
     public void order() {

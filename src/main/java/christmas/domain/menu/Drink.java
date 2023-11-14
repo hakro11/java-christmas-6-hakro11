@@ -60,13 +60,17 @@ public class Drink {
         return howManyOrder;
     }
 
-    public int calcTotalPrice() {
+    public void calcTotalPrice() {
         int result = 0;
 
         for (String menuName : DRINK_NAME) {
             result += bill.get(menuName) * howManyOrder.get(menuName);
         }
 
-        return result;
+        totalPrice = result;
+    }
+
+    public int getTotalPrice() {
+        return totalPrice;
     }
 }

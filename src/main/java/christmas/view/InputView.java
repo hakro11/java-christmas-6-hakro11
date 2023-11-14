@@ -4,6 +4,7 @@ import camp.nextstep.edu.missionutils.Console;
 import christmas.constants.ErrorMessage;
 import christmas.constants.InputMessage;
 import christmas.domain.Bill;
+import christmas.domain.menu.Drink;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -73,6 +74,10 @@ public class InputView {
     public void separate(List<String> inputSplit) {
         for (int i = 0; i < inputSplit.size(); i++) {
             validate(inputSplit.get(i).trim(), i);
+        }
+
+        if (checkMenuJustDrink()){
+            throw new IllegalArgumentException(makeErrorMessageNotAvailableOrder());
         }
     }
 
@@ -147,6 +152,13 @@ public class InputView {
         sb.append(ErrorMessage.ERROR_NOT_AVAILABLE_MEBU.getMESSAGE());
 
         return sb.toString();
+    }
+
+    private boolean checkMenuJustDrink() {
+        Bill bill = new Bill();
+        Drink drink = bill.getDrink();
+        return inputMenu.stream()
+                .allMatch(i -> drink.getDrink().contains(i));
     }
 
     private void dataClear() {

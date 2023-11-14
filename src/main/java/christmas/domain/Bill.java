@@ -16,7 +16,8 @@ public class Bill {
     private MainDish mainDish = new MainDish();
     private List<String> allMenu = setAllMenu();
     private Map<String, Integer> menuMap = new HashMap<>();
-    private int totalPrice = 0;
+    private int totalPriceBeforeDiscount = 0;
+    private int totalPriceAfterDiscount = 0;
 
     private List<String> setAllMenu () {
         List<String> result = new ArrayList<>();
@@ -43,9 +44,13 @@ public class Bill {
         return false;
     }
     public void calcPrice() {
-        totalPrice += appetizer.calcTotalPrice();
-        totalPrice += dessert.calcTotalPrice();
-        totalPrice += mainDish.calcTotalPrice();
-        totalPrice += drink.calcTotalPrice();
+        totalPriceBeforeDiscount += appetizer.getTotalPrice();
+        totalPriceBeforeDiscount += dessert.getTotalPrice();
+        totalPriceBeforeDiscount += mainDish.getTotalPrice();
+        totalPriceBeforeDiscount += drink.getTotalPrice();
+    }
+
+    public Drink getDrink() {
+        return drink;
     }
 }
