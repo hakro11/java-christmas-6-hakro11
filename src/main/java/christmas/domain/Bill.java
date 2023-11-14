@@ -97,4 +97,12 @@ public class Bill {
         totalPriceBeforeDiscount += mainDish.getTotalPrice();
         totalPriceBeforeDiscount += drink.getTotalPrice();
     }
+
+    public int getTotalPriceBeforeDiscount() {
+        return totalPriceBeforeDiscount;
+    }
+
+    public int getTotalPriceAfterDiscount() {
+        return totalPriceAfterDiscount;
+    }
 }

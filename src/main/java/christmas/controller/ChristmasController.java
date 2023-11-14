@@ -21,5 +21,6 @@ public class ChristmasController {
         outputView.showCanGetBenefits(WISH_DAY);
         outputView.outputOrder(inputView.getInputMenu(), inputView.getInputAmountMenu());
         bill.applyMenu(inputView);
+        outputView.outputPriceBeforeDiscount(bill.getTotalPriceBeforeDiscount());
     }
 }

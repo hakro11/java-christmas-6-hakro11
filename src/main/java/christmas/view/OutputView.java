@@ -1,9 +1,11 @@
 package christmas.view;
 
 import christmas.constants.OutputMessage;
+import christmas.utils.PutCommaInNumber;
 import java.util.List;
 
 public class OutputView {
+    PutCommaInNumber putCommaInNumber = new PutCommaInNumber();
     public void welcomeMessage() {
         System.out.println(OutputMessage.WELCOME_MESSAGE.getOUTPUT_MESSAGE());
     }
@@ -17,5 +19,11 @@ public class OutputView {
         for (int i = 0; i < menuName.size(); i++) {
             System.out.printf("%s %d개\n",menuName.get(i), amount.get(i));
         }
+        System.out.println("");
+    }
+
+    public void outputPriceBeforeDiscount(int price) {
+        System.out.println(OutputMessage.TOTAL_PRICE_BEFORE_DISCOUNT.getOUTPUT_MESSAGE());
+        System.out.println(putCommaInNumber.putCommaInNumber(price));
     }
 }
