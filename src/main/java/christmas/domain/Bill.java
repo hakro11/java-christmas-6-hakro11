@@ -98,6 +98,10 @@ public class Bill {
         totalPriceBeforeDiscount += drink.getTotalPrice();
     }
 
+    public void applyDiscount() {
+
+    }
+
     public int getTotalPriceBeforeDiscount() {
         return totalPriceBeforeDiscount;
     }

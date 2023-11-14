@@ -25,5 +25,21 @@ public class OutputView {
     public void outputPriceBeforeDiscount(int price) {
         System.out.println(OutputMessage.TOTAL_PRICE_BEFORE_DISCOUNT.getOUTPUT_MESSAGE());
         System.out.println(putCommaInNumber.putCommaInNumber(price));
+        System.out.println("");
+    }
+
+    public void outputGiftEvent(int price) {
+        System.out.println(OutputMessage.GIFT_MENU.getOUTPUT_MESSAGE());
+        System.out.println(canGetChampagne(price));
+        System.out.println("");
+    }
+
+    private String canGetChampagne(int price) {
+        final int REFERENCE_VALUE = 120_000;
+        if (price >= REFERENCE_VALUE) {
+            return OutputMessage.GIFT_MENU_CAN_GET.getOUTPUT_MESSAGE();
+        }
+
+        return "없음";
     }
 }

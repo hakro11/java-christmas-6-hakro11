@@ -6,6 +6,7 @@ public enum OutputMessage {
     ORDER_MENU("<주문 메뉴>"),
     TOTAL_PRICE_BEFORE_DISCOUNT("<할인 전 총주문 금액>"),
     GIFT_MENU("<증정 메뉴>"),
+    GIFT_MENU_CAN_GET("샴페인 1개"),
     SHOW_ALL_DISCOUNT("<혜택 내역>"),
     TOTAL_DISCOUNT_PRICE("<총혜택 금액>"),
     EXPECTED_PRICE("<할인 후 예상 결제 금액>"),
