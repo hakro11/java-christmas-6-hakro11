@@ -53,4 +53,8 @@ public class Calendar {
             calendar.put(day, String.valueOf(Const.WEEKDAY));
         }
     }
+
+    public String whatDay(int wishDay) {
+        return eventCalendar.get(wishDay);
+    }
 }

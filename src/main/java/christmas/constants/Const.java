@@ -11,8 +11,7 @@ public enum Const {
         this.str = str;
     }
 
-    @Override
-    public String toString() {
+    public String getStr() {
         return str;
     }
 }

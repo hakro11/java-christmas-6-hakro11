@@ -11,10 +11,6 @@ public class Discount {
 
     private int special = 0;
     private int gift = 0;
-    private Bill bill;
-    public Discount(Bill bill) {
-        this.bill = bill;
-    }
 
     public int getChristmasD_Day() {
         return christmasD_Day;
@@ -36,31 +32,36 @@ public class Discount {
         return gift;
     }
 
-    public void d_dayDiscount(int wishDay) {
+    public int d_dayDiscount(int wishDay) {
         final int EVENT_START = 1;
         final int EVENT_END = 25;
 
         if (wishDay >= EVENT_START && wishDay <= EVENT_END) {
             christmasD_Day += (wishDay-1)*RATIO;
-            return;
+            return christmasD_Day;
         }
 
         christmasD_Day = 0;
+        return christmasD_Day;
     }
 
-    public void weekdayDiscount(int menuAmount) {
+    public int weekdayDiscount(int menuAmount) {
         weekday = DISCOUNT * menuAmount;
+        return weekday;
     }
 
-    public void weekendDiscount(int menuAmount) {
+    public int weekendDiscount(int menuAmount) {
         weekend = DISCOUNT * menuAmount;
+        return weekend;
     }
 
-    public void specialDiscount() {
+    public int specialDiscount() {
         special = 1000;
+        return special;
     }
 
-    public void giftEvent() {
+    public int giftEvent() {
         gift = AllMenu.DRINK_CHAMPAGNE.getMenuPrice();
+        return gift;
     }
 }

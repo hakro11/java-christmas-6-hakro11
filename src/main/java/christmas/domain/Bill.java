@@ -14,9 +14,9 @@ public class Bill {
     private Appetizer appetizer = new Appetizer();
     private Dessert dessert = new Dessert();
     private Drink drink = new Drink();
+
     private MainDish mainDish = new MainDish();
     private List<String> allMenu = setAllMenu();
-    private Map<String, Integer> menuMap = new HashMap<>();
     private int totalPriceBeforeDiscount = 0;
     private int totalPriceAfterDiscount = 0;
 
@@ -47,6 +47,14 @@ public class Bill {
 
     public Drink getDrink() {
         return drink;
+    }
+
+    public Dessert getDessert() {
+        return dessert;
+    }
+
+    public MainDish getMainDish() {
+        return mainDish;
     }
 
     public void applyMenu(InputView inputView) {

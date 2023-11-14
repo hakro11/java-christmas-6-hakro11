@@ -69,6 +69,10 @@ public class MainDish {
         howManyOrder.replace(menuName, howManyOrder.get(menuName) + menuAmount);
     }
 
+    public int howManyOrder() {
+        return howManyOrder.values().stream().mapToInt(Integer::intValue).sum();
+    }
+
     public int getTotalPrice() {
         return totalPrice;
     }
