@@ -55,14 +55,6 @@ public class MainDish {
         return MAINDISH_NAME;
     }
 
-    public Map<String, Integer> getBill() {
-        return bill;
-    }
-
-    public Map<String, Integer> getHowManyOrder() {
-        return howManyOrder;
-    }
-
     public void calcTotalPrice() {
         int result = 0;
 
@@ -71,6 +63,10 @@ public class MainDish {
         }
 
         totalPrice = result;
+    }
+
+    public void order(String menuName, int menuAmount) {
+        howManyOrder.replace(menuName, howManyOrder.get(menuName) + menuAmount);
     }
 
     public int getTotalPrice() {

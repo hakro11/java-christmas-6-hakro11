@@ -20,5 +20,6 @@ public class ChristmasController {
         inputView.bookingMenu();
         outputView.showCanGetBenefits(WISH_DAY);
         outputView.outputOrder(inputView.getInputMenu(), inputView.getInputAmountMenu());
+        bill.applyMenu(inputView);
     }
 }

@@ -4,6 +4,7 @@ import christmas.domain.menu.Appetizer;
 import christmas.domain.menu.Dessert;
 import christmas.domain.menu.Drink;
 import christmas.domain.menu.MainDish;
+import christmas.view.InputView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +20,7 @@ public class Bill {
     private int totalPriceBeforeDiscount = 0;
     private int totalPriceAfterDiscount = 0;
 
-    private List<String> setAllMenu () {
+    private List<String> setAllMenu() {
         List<String> result = new ArrayList<>();
 
         addMenu(result, appetizer.getAppetizers());
@@ -43,14 +44,57 @@ public class Bill {
 
         return false;
     }
-    public void calcPrice() {
+
+    public Drink getDrink() {
+        return drink;
+    }
+
+    public void applyMenu(InputView inputView) {
+        List<String> menu = inputView.getInputMenu();
+        List<Integer> amount = inputView.getInputAmountMenu();
+
+        for (int i = 0; i < menu.size(); i++) {
+            String menuName = menu.get(i);
+            int menuAmount = amount.get(i);
+            whatKindOfMenu(menuName, menuAmount);
+        }
+
+        applyPrice();
+        calcPrice();
+    }
+
+    private void whatKindOfMenu(String menuName, int menuAmount) {
+        if (appetizer.getAppetizers().contains(menuName)) {
+            appetizer.order(menuName, menuAmount);
+            return;
+        }
+
+        if (dessert.getDesserts().contains(menuName)) {
+            dessert.order(menuName, menuAmount);
+            return;
+        }
+
+        if (mainDish.getMainDish().contains(menuName)) {
+            mainDish.order(menuName, menuAmount);
+            return;
+        }
+
+        if (drink.getDrink().contains(menuName)) {
+            drink.order(menuName, menuAmount);
+        }
+    }
+
+    private void applyPrice() {
+        appetizer.calcTotalPrice();
+        dessert.calcTotalPrice();
+        mainDish.calcTotalPrice();
+        drink.calcTotalPrice();
+    }
+
+    private void calcPrice() {
         totalPriceBeforeDiscount += appetizer.getTotalPrice();
         totalPriceBeforeDiscount += dessert.getTotalPrice();
         totalPriceBeforeDiscount += mainDish.getTotalPrice();
         totalPriceBeforeDiscount += drink.getTotalPrice();
-    }
-
-    public Drink getDrink() {
-        return drink;
     }
 }
