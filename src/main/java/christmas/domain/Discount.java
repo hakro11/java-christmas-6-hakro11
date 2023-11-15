@@ -45,23 +45,19 @@ public class Discount {
         return christmasD_Day;
     }
 
-    public int weekdayDiscount(int menuAmount) {
+    public void weekdayDiscount(int menuAmount) {
         weekday = DISCOUNT * menuAmount;
-        return weekday;
     }
 
-    public int weekendDiscount(int menuAmount) {
+    public void weekendDiscount(int menuAmount) {
         weekend = DISCOUNT * menuAmount;
-        return weekend;
     }
 
-    public int specialDiscount() {
+    public void specialDiscount() {
         special = 1000;
-        return special;
     }
 
-    public int giftEvent() {
+    public void giftEvent() {
         gift = AllMenu.DRINK_CHAMPAGNE.getMenuPrice();
-        return gift;
     }
 }
