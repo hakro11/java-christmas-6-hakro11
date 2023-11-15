@@ -173,4 +173,15 @@ public class InputView {
     public List<Integer> getInputAmountMenu() {
         return inputAmountMenu;
     }
+
+    /**
+     * Test Code 작성용 set 메서드
+     */
+    public void setInputMenu(List<String> inputMenu) {
+        this.inputMenu = inputMenu;
+    }
+
+    public void setInputAmountMenu(List<Integer> inputAmountMenu) {
+        this.inputAmountMenu = inputAmountMenu;
+    }
 }
